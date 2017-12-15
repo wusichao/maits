@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property resource="log.properties" />
+
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%d %-5level %t] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- System log -->
+    <appender name="file.log.sys" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <append>true</append>
+        <file>${LOG_HOME_ING}/${server.num}.tk.sys.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/sys/%d{yyyyMMdd}.${server.num}.tk.sys.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>[%d %-5level %t] %msg%n</pattern>
+        </encoder>
+    </appender>
+    <root>
+        <level value="INFO" />
+        <appender-ref ref="file.log.sys" />
+        <appender-ref ref="stdout" />
+    </root>
+
+    <!-- imp -->
+    <appender name="file.click.log" class="ch.qos.logback.core.rolling.ForceRollingFileAppender">
+        <append>true</append>
+        <file>${LOG_HOME_ING}/${server.num}.click.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/click/%d{yyyyMMdd,aux}/%d{yyyyMMddHHmm}.${server.num}.imp.log
+            </fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+        <forceRollingSeconds>10</forceRollingSeconds>
+    </appender>
+    <logger name="click.log" level="INFO" additivity="false">
+        <appender-ref ref="file.click.log" />
+    </logger>
+</configuration>
