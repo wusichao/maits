@@ -16,6 +16,8 @@ public class ClickWriter extends CommonWriter{
     private Logger logger;
     @Override
     public void write(Action action, StringBuilder buf){
+        action.setActionType("CLICK");
+        action.setActionPreId("preID");
         super.write(action,buf);
         Object[] fields = render((ClickAction)action);
         if (fields != null && fields.length > 0) {

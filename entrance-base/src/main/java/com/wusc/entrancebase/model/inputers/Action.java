@@ -12,6 +12,8 @@ public class Action implements Serializable{
     private String ip;
     private String sessionId;
     private long requestTime;
+    private String actionType;
+    private String actionPreId;
 
     public String getAccountId() {
         return accountId;
@@ -98,5 +100,21 @@ public class Action implements Serializable{
                 ", sessionId='" + sessionId + '\'' +
                 ", requestTime=" + requestTime +
                 '}';
+    }
+
+    public String getActionType() {
+        return actionType;
+    }
+
+    public void setActionType(String actionType) {
+        this.actionType = actionType;
+    }
+
+    public String getActionPreId() {
+        return actionPreId;
+    }
+
+    public void setActionPreId(String actionPreId) {
+        this.actionPreId = actionPreId;
     }
 }

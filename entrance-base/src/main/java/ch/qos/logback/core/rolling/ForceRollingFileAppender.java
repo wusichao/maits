@@ -12,7 +12,7 @@ public class ForceRollingFileAppender extends RollingFileAppender<ILoggingEvent>
 
 	private int forceRollingSeconds = 60;
 	
-	private static ScheduledExecutorService timer = Executors.newScheduledThreadPool(5, new DaemonThreadFactory());
+	private static ScheduledExecutorService timer = Executors.newScheduledThreadPool(10, new DaemonThreadFactory());
 	
 	static class DaemonThreadFactory implements ThreadFactory{
 

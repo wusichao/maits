@@ -11,9 +11,9 @@
     <!-- System log -->
     <appender name="file.log.sys" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <append>true</append>
-        <file>${LOG_HOME_ING}/${server.num}.tk.sys.log</file>
+        <file>${LOG_HOME_ING}/${server.num}.click.sys.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_HOME}/sys/%d{yyyyMMdd}.${server.num}.tk.sys.log</fileNamePattern>
+            <fileNamePattern>${LOG_HOME}/sys/%d{yyyyMMdd}.${server.num}.click.sys.log</fileNamePattern>
         </rollingPolicy>
         <encoder>
             <pattern>[%d %-5level %t] %msg%n</pattern>
@@ -25,12 +25,12 @@
         <appender-ref ref="stdout" />
     </root>
 
-    <!-- imp -->
+    <!-- click -->
     <appender name="file.click.log" class="ch.qos.logback.core.rolling.ForceRollingFileAppender">
         <append>true</append>
         <file>${LOG_HOME_ING}/${server.num}.click.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_HOME}/click/%d{yyyyMMdd,aux}/%d{yyyyMMddHHmm}.${server.num}.imp.log
+            <fileNamePattern>${LOG_HOME}/click/%d{yyyyMMdd,aux}/%d{yyyyMMddHHmm}.${server.num}.click.log
             </fileNamePattern>
         </rollingPolicy>
         <encoder>

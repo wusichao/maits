@@ -1,0 +1,9 @@
+log:
+  home: C:\Users\hasee\Desktop\logdata\imp,C:\Users\hasee\Desktop\logdata\click
+spring:
+  datasource:
+    name: campaign
+    username: wusc
+    password: Wusc@2017
+    url: jdbc:mysql://47.94.8.65:3306/campaign?useUnicode=true
+    driver-class-name: com.mysql.jdbc.Driver

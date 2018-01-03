@@ -10,5 +10,7 @@ public enum CommLogField {
 	IP,
 	SESSIONID,
 	REQUESTTIME,
+	ACTIONTYPE,
+	ACTIONPREID,
 	;
 }

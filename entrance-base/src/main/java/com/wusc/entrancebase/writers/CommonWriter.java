@@ -32,6 +32,8 @@ public abstract class CommonWriter implements writerI{
             ret[CommLogField.IP.ordinal()] = action.getIp();
             ret[CommLogField.SESSIONID.ordinal()] = action.getSessionId();
             ret[CommLogField.REQUESTTIME.ordinal()] = TimeUtils.formatMills(action.getRequestTime());
+            ret[CommLogField.ACTIONTYPE.ordinal()] = action.getActionType();
+            ret[CommLogField.ACTIONPREID.ordinal()] = action.getActionPreId();
         }
         return ret;
     }

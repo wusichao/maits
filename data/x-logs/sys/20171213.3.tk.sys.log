@@ -1,0 +1,147 @@
+[2017-12-13 14:41:22,813 INFO  main] Starting EntranceImpApplication on DESKTOP-C4M9DI8 with PID 39924 (D:\work\ideaspace\entrance\entrance-imp\target\classes started by hasee in D:\work\ideaspace\entrance)
+[2017-12-13 14:41:22,817 INFO  main] No active profile set, falling back to default profiles: default
+[2017-12-13 14:41:22,866 INFO  main] Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2145433b: startup date [Wed Dec 13 14:41:22 CST 2017]; root of context hierarchy
+[2017-12-13 14:41:22,968 INFO  background-preinit] HV000001: Hibernate Validator 5.3.6.Final
+[2017-12-13 14:41:23,760 INFO  main] Tomcat initialized with port(s): 8080 (http)
+[2017-12-13 14:41:23,767 INFO  main] Starting service [Tomcat]
+[2017-12-13 14:41:23,768 INFO  main] Starting Servlet Engine: Apache Tomcat/8.5.23
+[2017-12-13 14:41:23,834 INFO  localhost-startStop-1] Initializing Spring embedded WebApplicationContext
+[2017-12-13 14:41:23,834 INFO  localhost-startStop-1] Root WebApplicationContext: initialization completed in 969 ms
+[2017-12-13 14:41:23,936 INFO  localhost-startStop-1] Mapping servlet: 'dispatcherServlet' to [/]
+[2017-12-13 14:41:23,941 INFO  localhost-startStop-1] Mapping filter: 'characterEncodingFilter' to: [/*]
+[2017-12-13 14:41:23,941 INFO  localhost-startStop-1] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[2017-12-13 14:41:23,941 INFO  localhost-startStop-1] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[2017-12-13 14:41:23,942 INFO  localhost-startStop-1] Mapping filter: 'requestContextFilter' to: [/*]
+[2017-12-13 14:41:24,245 INFO  main] Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2145433b: startup date [Wed Dec 13 14:41:22 CST 2017]; root of context hierarchy
+[2017-12-13 14:41:24,302 INFO  main] Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[2017-12-13 14:41:24,303 INFO  main] Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[2017-12-13 14:41:24,329 INFO  main] Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2017-12-13 14:41:24,331 INFO  main] Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2017-12-13 14:41:24,368 INFO  main] Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2017-12-13 14:41:24,489 INFO  main] Registering beans for JMX exposure on startup
+[2017-12-13 14:41:24,503 INFO  main] Initializing ProtocolHandler ["http-nio-8080"]
+[2017-12-13 14:41:24,510 INFO  main] Starting ProtocolHandler ["http-nio-8080"]
+[2017-12-13 14:41:24,525 INFO  main] Using a shared selector for servlet write/read
+[2017-12-13 14:41:24,541 INFO  main] Tomcat started on port(s): 8080 (http)
+[2017-12-13 14:41:24,548 INFO  main] Started EntranceImpApplication in 1.932 seconds (JVM running for 3.547)
+[2017-12-13 14:42:13,552 INFO  http-nio-8080-exec-1] Initializing Spring FrameworkServlet 'dispatcherServlet'
+[2017-12-13 14:42:13,552 INFO  http-nio-8080-exec-1] FrameworkServlet 'dispatcherServlet': initialization started
+[2017-12-13 14:42:13,597 INFO  http-nio-8080-exec-1] FrameworkServlet 'dispatcherServlet': initialization completed in 45 ms
+[2017-12-13 14:54:58,483 INFO  main] Starting EntranceImpApplication on DESKTOP-C4M9DI8 with PID 67204 (D:\work\ideaspace\entrance\entrance-imp\target\classes started by hasee in D:\work\ideaspace\entrance)
+[2017-12-13 14:54:58,487 INFO  main] No active profile set, falling back to default profiles: default
+[2017-12-13 14:54:58,545 INFO  main] Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@341b80b2: startup date [Wed Dec 13 14:54:58 CST 2017]; root of context hierarchy
+[2017-12-13 14:54:58,660 INFO  background-preinit] HV000001: Hibernate Validator 5.3.6.Final
+[2017-12-13 14:54:59,481 INFO  main] Tomcat initialized with port(s): 8080 (http)
+[2017-12-13 14:54:59,489 INFO  main] Starting service [Tomcat]
+[2017-12-13 14:54:59,490 INFO  main] Starting Servlet Engine: Apache Tomcat/8.5.23
+[2017-12-13 14:54:59,561 INFO  localhost-startStop-1] Initializing Spring embedded WebApplicationContext
+[2017-12-13 14:54:59,561 INFO  localhost-startStop-1] Root WebApplicationContext: initialization completed in 1016 ms
+[2017-12-13 14:54:59,700 INFO  localhost-startStop-1] Mapping servlet: 'dispatcherServlet' to [/]
+[2017-12-13 14:54:59,701 INFO  localhost-startStop-1] Mapping servlet: 'com.wusc.entranceimp.servlet.ImpServlert' to [/i]
+[2017-12-13 14:54:59,711 INFO  localhost-startStop-1] Mapping filter: 'characterEncodingFilter' to: [/*]
+[2017-12-13 14:54:59,711 INFO  localhost-startStop-1] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[2017-12-13 14:54:59,712 INFO  localhost-startStop-1] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[2017-12-13 14:54:59,712 INFO  localhost-startStop-1] Mapping filter: 'requestContextFilter' to: [/*]
+[2017-12-13 14:54:59,939 INFO  main] Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@341b80b2: startup date [Wed Dec 13 14:54:58 CST 2017]; root of context hierarchy
+[2017-12-13 14:54:59,985 INFO  main] Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[2017-12-13 14:54:59,986 INFO  main] Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[2017-12-13 14:55:00,013 INFO  main] Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2017-12-13 14:55:00,013 INFO  main] Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2017-12-13 14:55:00,039 INFO  main] Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2017-12-13 14:55:00,158 INFO  main] Registering beans for JMX exposure on startup
+[2017-12-13 14:55:00,172 INFO  main] Initializing ProtocolHandler ["http-nio-8080"]
+[2017-12-13 14:55:00,181 INFO  main] Starting ProtocolHandler ["http-nio-8080"]
+[2017-12-13 14:55:00,197 INFO  main] Using a shared selector for servlet write/read
+[2017-12-13 14:55:00,214 INFO  main] Tomcat started on port(s): 8080 (http)
+[2017-12-13 14:55:00,219 INFO  main] Started EntranceImpApplication in 1.943 seconds (JVM running for 2.84)
+[2017-12-13 14:55:09,350 INFO  http-nio-8080-exec-1] 参数解析错误
+[2017-12-13 14:57:15,419 INFO  main] Starting EntranceImpApplication on DESKTOP-C4M9DI8 with PID 69156 (D:\work\ideaspace\entrance\entrance-imp\target\classes started by hasee in D:\work\ideaspace\entrance)
+[2017-12-13 14:57:15,421 INFO  main] No active profile set, falling back to default profiles: default
+[2017-12-13 14:57:15,495 INFO  main] Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2145433b: startup date [Wed Dec 13 14:57:15 CST 2017]; root of context hierarchy
+[2017-12-13 14:57:15,641 INFO  background-preinit] HV000001: Hibernate Validator 5.3.6.Final
+[2017-12-13 14:57:16,462 INFO  main] Tomcat initialized with port(s): 8080 (http)
+[2017-12-13 14:57:16,470 INFO  main] Starting service [Tomcat]
+[2017-12-13 14:57:16,471 INFO  main] Starting Servlet Engine: Apache Tomcat/8.5.23
+[2017-12-13 14:57:16,558 INFO  localhost-startStop-1] Initializing Spring embedded WebApplicationContext
+[2017-12-13 14:57:16,559 INFO  localhost-startStop-1] Root WebApplicationContext: initialization completed in 1064 ms
+[2017-12-13 14:57:16,690 INFO  localhost-startStop-1] Mapping servlet: 'dispatcherServlet' to [/]
+[2017-12-13 14:57:16,692 INFO  localhost-startStop-1] Mapping servlet: 'com.wusc.entranceimp.servlet.ImpServlert' to [/i]
+[2017-12-13 14:57:16,694 INFO  localhost-startStop-1] Mapping filter: 'characterEncodingFilter' to: [/*]
+[2017-12-13 14:57:16,695 INFO  localhost-startStop-1] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[2017-12-13 14:57:16,695 INFO  localhost-startStop-1] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[2017-12-13 14:57:16,695 INFO  localhost-startStop-1] Mapping filter: 'requestContextFilter' to: [/*]
+[2017-12-13 14:57:16,953 INFO  main] Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2145433b: startup date [Wed Dec 13 14:57:15 CST 2017]; root of context hierarchy
+[2017-12-13 14:57:17,005 INFO  main] Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[2017-12-13 14:57:17,006 INFO  main] Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[2017-12-13 14:57:17,030 INFO  main] Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2017-12-13 14:57:17,030 INFO  main] Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2017-12-13 14:57:17,054 INFO  main] Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2017-12-13 14:57:17,165 INFO  main] Registering beans for JMX exposure on startup
+[2017-12-13 14:57:17,181 INFO  main] Initializing ProtocolHandler ["http-nio-8080"]
+[2017-12-13 14:57:17,187 INFO  main] Starting ProtocolHandler ["http-nio-8080"]
+[2017-12-13 14:57:17,205 INFO  main] Using a shared selector for servlet write/read
+[2017-12-13 14:57:17,222 INFO  main] Tomcat started on port(s): 8080 (http)
+[2017-12-13 14:57:17,226 INFO  main] Started EntranceImpApplication in 2.04 seconds (JVM running for 2.874)
+[2017-12-13 15:01:20,947 INFO  http-nio-8080-exec-1] read "xid.properties" successfully;serverNum=3
+[2017-12-13 16:36:12,364 INFO  main] Starting EntranceImpApplication on DESKTOP-C4M9DI8 with PID 153348 (D:\work\ideaspace\entrance\entrance-imp\target\classes started by hasee in D:\work\ideaspace\entrance)
+[2017-12-13 16:36:12,367 INFO  main] No active profile set, falling back to default profiles: default
+[2017-12-13 16:36:12,427 INFO  main] Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@20d3d15a: startup date [Wed Dec 13 16:36:12 CST 2017]; root of context hierarchy
+[2017-12-13 16:36:12,652 INFO  background-preinit] HV000001: Hibernate Validator 5.3.6.Final
+[2017-12-13 16:36:13,501 INFO  main] Tomcat initialized with port(s): 8001 (http)
+[2017-12-13 16:36:13,508 INFO  main] Starting service [Tomcat]
+[2017-12-13 16:36:13,509 INFO  main] Starting Servlet Engine: Apache Tomcat/8.5.23
+[2017-12-13 16:36:13,575 INFO  localhost-startStop-1] Initializing Spring embedded WebApplicationContext
+[2017-12-13 16:36:13,575 INFO  localhost-startStop-1] Root WebApplicationContext: initialization completed in 1148 ms
+[2017-12-13 16:36:13,709 INFO  localhost-startStop-1] Mapping servlet: 'dispatcherServlet' to [/]
+[2017-12-13 16:36:13,710 INFO  localhost-startStop-1] Mapping servlet: 'com.wusc.entranceimp.servlet.ImpServlert' to [/i]
+[2017-12-13 16:36:13,714 INFO  localhost-startStop-1] Mapping filter: 'characterEncodingFilter' to: [/*]
+[2017-12-13 16:36:13,714 INFO  localhost-startStop-1] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[2017-12-13 16:36:13,714 INFO  localhost-startStop-1] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[2017-12-13 16:36:13,714 INFO  localhost-startStop-1] Mapping filter: 'requestContextFilter' to: [/*]
+[2017-12-13 16:36:13,998 INFO  main] Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@20d3d15a: startup date [Wed Dec 13 16:36:12 CST 2017]; root of context hierarchy
+[2017-12-13 16:36:14,057 INFO  main] Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[2017-12-13 16:36:14,058 INFO  main] Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[2017-12-13 16:36:14,084 INFO  main] Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2017-12-13 16:36:14,084 INFO  main] Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2017-12-13 16:36:14,121 INFO  main] Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2017-12-13 16:36:14,267 INFO  main] Registering beans for JMX exposure on startup
+[2017-12-13 16:36:14,287 INFO  main] Initializing ProtocolHandler ["http-nio-8001"]
+[2017-12-13 16:36:14,298 INFO  main] Starting ProtocolHandler ["http-nio-8001"]
+[2017-12-13 16:36:14,315 INFO  main] Using a shared selector for servlet write/read
+[2017-12-13 16:36:14,340 INFO  main] Tomcat started on port(s): 8001 (http)
+[2017-12-13 16:36:14,345 INFO  main] Started EntranceImpApplication in 2.29 seconds (JVM running for 3.23)
+[2017-12-13 16:36:32,352 INFO  main] Starting EntranceClickApplication on DESKTOP-C4M9DI8 with PID 150984 (D:\work\ideaspace\entrance\entrance-click\target\classes started by hasee in D:\work\ideaspace\entrance)
+[2017-12-13 16:36:32,354 INFO  main] No active profile set, falling back to default profiles: default
+[2017-12-13 16:36:32,418 INFO  main] Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@20d3d15a: startup date [Wed Dec 13 16:36:32 CST 2017]; root of context hierarchy
+[2017-12-13 16:36:32,547 INFO  background-preinit] HV000001: Hibernate Validator 5.3.6.Final
+[2017-12-13 16:36:33,451 INFO  main] Tomcat initialized with port(s): 8002 (http)
+[2017-12-13 16:36:33,457 INFO  main] Starting service [Tomcat]
+[2017-12-13 16:36:33,458 INFO  main] Starting Servlet Engine: Apache Tomcat/8.5.23
+[2017-12-13 16:36:33,523 INFO  localhost-startStop-1] Initializing Spring embedded WebApplicationContext
+[2017-12-13 16:36:33,524 INFO  localhost-startStop-1] Root WebApplicationContext: initialization completed in 1106 ms
+[2017-12-13 16:36:33,649 INFO  localhost-startStop-1] Mapping servlet: 'dispatcherServlet' to [/]
+[2017-12-13 16:36:33,649 INFO  localhost-startStop-1] Mapping servlet: 'com.wusc.entranceclick.servlet.ClickServlert' to [/c]
+[2017-12-13 16:36:33,652 INFO  localhost-startStop-1] Mapping filter: 'characterEncodingFilter' to: [/*]
+[2017-12-13 16:36:33,652 INFO  localhost-startStop-1] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[2017-12-13 16:36:33,652 INFO  localhost-startStop-1] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[2017-12-13 16:36:33,652 INFO  localhost-startStop-1] Mapping filter: 'requestContextFilter' to: [/*]
+[2017-12-13 16:36:33,903 INFO  main] Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@20d3d15a: startup date [Wed Dec 13 16:36:32 CST 2017]; root of context hierarchy
+[2017-12-13 16:36:33,955 INFO  main] Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[2017-12-13 16:36:33,956 INFO  main] Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[2017-12-13 16:36:33,982 INFO  main] Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2017-12-13 16:36:33,982 INFO  main] Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2017-12-13 16:36:34,011 INFO  main] Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2017-12-13 16:36:34,127 INFO  main] Registering beans for JMX exposure on startup
+[2017-12-13 16:36:34,148 INFO  main] Initializing ProtocolHandler ["http-nio-8002"]
+[2017-12-13 16:36:34,159 INFO  main] Starting ProtocolHandler ["http-nio-8002"]
+[2017-12-13 16:36:34,180 INFO  main] Using a shared selector for servlet write/read
+[2017-12-13 16:36:34,202 INFO  main] Tomcat started on port(s): 8002 (http)
+[2017-12-13 16:36:34,206 INFO  main] Started EntranceClickApplication in 2.19 seconds (JVM running for 3.034)
+[2017-12-13 16:37:12,637 INFO  http-nio-8001-exec-1] read "xid.properties" successfully;serverNum=3
+[2017-12-13 16:37:12,707 INFO  http-nio-8001-exec-2] Initializing Spring FrameworkServlet 'dispatcherServlet'
+[2017-12-13 16:37:12,707 INFO  http-nio-8001-exec-2] FrameworkServlet 'dispatcherServlet': initialization started
+[2017-12-13 16:37:12,720 INFO  http-nio-8001-exec-2] FrameworkServlet 'dispatcherServlet': initialization completed in 13 ms
+[2017-12-13 16:37:28,711 INFO  http-nio-8002-exec-1] read "xid.properties" successfully;serverNum=3
+[2017-12-13 16:37:29,329 INFO  http-nio-8002-exec-2] Initializing Spring FrameworkServlet 'dispatcherServlet'
+[2017-12-13 16:37:29,330 INFO  http-nio-8002-exec-2] FrameworkServlet 'dispatcherServlet': initialization started
+[2017-12-13 16:37:29,351 INFO  http-nio-8002-exec-2] FrameworkServlet 'dispatcherServlet': initialization completed in 21 ms

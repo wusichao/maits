@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: git
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/wusichao/maits.git
+          searchPaths: /cloud-config
+          username: wusichao
+          password: wsc15171545112
+server:
+  port: 6001

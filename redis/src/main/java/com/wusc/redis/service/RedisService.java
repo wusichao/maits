@@ -1,7 +1,8 @@
 package com.wusc.redis.service;
 
-import com.wusc.redis.param.ParamWapper;
-import com.wusc.redis.re.RedisResult;
+import com.wusc.auth.utils.ResultUtil;
+import com.wusc.auth.utils.ReturnResult;
+import com.wusc.redis.dto.RedisDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class RedisService {
     @Autowired
     private JedisPool jedisPool;
 
-    public Object operate(ParamWapper wapper){
+    public Object operate(RedisDTO wapper){
         Jedis jedis =null;
         Object re=null;
         try {
@@ -25,10 +26,11 @@ public class RedisService {
             Method method =Jedis.class.getMethod(wapper.getMethod(),wapper.getClazzs());
             re= method.invoke(jedis,wapper.getParams());
         }catch(Exception e){
-            logger.error("redis operate failure",e.getMessage());
+            logger.error("redis operate failure",e);
+            return ResultUtil.SYSTEM_ERROR;
     }finally{
             if (jedis != null) jedis.close();
         }
-        return new RedisResult("200",re);
+        return new ReturnResult(ResultUtil.SUCCESS_CODE,re);
     }
 }

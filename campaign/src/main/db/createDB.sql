@@ -1,0 +1,2 @@
+DROP DATABASE  IF EXISTS campaign;
+CREATE DATABASE campaign;

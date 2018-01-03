@@ -14,6 +14,8 @@ public class ImpWriter extends CommonWriter{
     private Logger logger;
     @Override
     public void write(Action action, StringBuilder buf){
+        action.setActionType("IMPRESSION");
+        action.setActionPreId("preID");
         super.write(action,buf);
         Object[] fields = render(action);
         if (fields != null && fields.length > 0) {

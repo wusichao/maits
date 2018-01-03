@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS creative;
+CREATE TABLE creative (
+  id bigint(20) NOT NULL AUTO_INCREMENT,
+  name varchar(50) NOT NULL,
+  path varchar(255) NOT NULL DEFAULT '',
+  creation datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  last_modified datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  removed bit(1) NOT NULL DEFAULT b'0',
+  PRIMARY KEY (id)
+) ENGINE=InnoDB AUTO_INCREMENT=350 DEFAULT CHARSET=utf8;
