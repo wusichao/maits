@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -28,6 +29,13 @@ public class AccountController {
     private static final Logger log = LoggerFactory.getLogger(AccountController.class);
     @Autowired
     private AccountService accountService;
+    @Value("$from")
+    private String from;
+
+    @RequestMapping(value = "from")
+    public String from(){
+        return from;
+    }
 
     @ApiOperation(value="用户注册", response=ReturnResult.class)
     @ApiImplicitParams({
