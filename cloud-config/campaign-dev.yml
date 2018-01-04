@@ -1,4 +1,4 @@
-from: campaign-dev master
+from: campaign-dev master:v6
 
 server:
   port: 8003
