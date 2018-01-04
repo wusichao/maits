@@ -70,3 +70,6 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: false
+
+security.user.name: wusichao
+security.user.password: 123456
