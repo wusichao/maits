@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <springProperty scope="context" name="logSysLevel" source="log.sys.level"/>
+    <springProperty scope="context" name="logHome" source="log.home"/>
+    <springProperty scope="context" name="serverNum" source="server.num"/>
+
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%d %-5level %t] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- System log -->
+    <appender name="file.log.sys" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <append>true</append>
+        <file>${logHome}/ing/${serverNum}.gateway.sys.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logHome}/sys/%d{yyyyMMdd}.${serverNum}.gateway.sys.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>[%d %-5level %t] %msg%n</pattern>
+        </encoder>
+    </appender>
+    <root level="${logSysLevel}">
+        <appender-ref ref="file.log.sys" />
+        <appender-ref ref="stdout" />
+    </root>
+
+</configuration>

@@ -1,0 +1,5 @@
+server:
+  port: 80
+
+security.user.name: wusichao
+security.user.password: 123456

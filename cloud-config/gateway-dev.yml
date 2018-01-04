@@ -1,0 +1,33 @@
+server:
+  port: 80
+
+zuul:
+  max:
+    host:
+      connections: 500
+  host:
+    socket-timeout-millis: 20000
+    connect-timeout-millis: 20000
+  prefix: /
+  routes:
+    campaign:
+      path: /campaign/**
+      serviceId: campaign
+      stripPrefix: true
+
+security.user.name: wusichao
+security.user.password: 123456
+
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
+
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 2000

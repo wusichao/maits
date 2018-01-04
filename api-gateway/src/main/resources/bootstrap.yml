@@ -1,0 +1,24 @@
+server:
+  num: 3
+log:
+  home: C:\Users\hasee\Desktop\logdata
+  sys:
+    level: info
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+spring:
+  application:
+    name: gateway
+  cloud:
+    config:
+      profile: dev
+      label: master
+      username: wusichao
+      password: 123456
+      discovery:
+        enabled: true
+        service-id: config-server
+
+
