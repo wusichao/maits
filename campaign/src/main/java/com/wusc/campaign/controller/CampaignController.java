@@ -82,6 +82,10 @@ public class CampaignController {
 
 
     }
+    //TODO
+    public ReturnResult getMaitsCode(){
 
+        return null;
+    }
 }
 
