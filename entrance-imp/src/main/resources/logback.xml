@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <property resource="log.properties" />
+    <springProperty scope="context" name="logSysLevel" source="log.sys.level"/>
+    <springProperty scope="context" name="logHome" source="log.home"/>
+    <springProperty scope="context" name="serverNum" source="server.num"/>
 
     <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
@@ -11,26 +13,21 @@
     <!-- System log -->
     <appender name="file.log.sys" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <append>true</append>
-        <file>${LOG_HOME_ING}/${server.num}.imp.sys.log</file>
+        <file>${logHome}/ing/${serverNum}.imp.sys.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_HOME}/sys/%d{yyyyMMdd}.${server.num}.imp.sys.log</fileNamePattern>
+            <fileNamePattern>${logHome}/sys/%d{yyyyMMdd}.${serverNum}.imp.sys.log</fileNamePattern>
         </rollingPolicy>
         <encoder>
             <pattern>[%d %-5level %t] %msg%n</pattern>
         </encoder>
     </appender>
-    <root>
-        <level value="INFO" />
-        <appender-ref ref="file.log.sys" />
-        <appender-ref ref="stdout" />
-    </root>
 
     <!-- imp -->
     <appender name="file.imp.log" class="ch.qos.logback.core.rolling.ForceRollingFileAppender">
         <append>true</append>
-        <file>${LOG_HOME_ING}/${server.num}.imp.log</file>
+        <file>${logHome}/ing/${serverNum}.imp.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_HOME}/imp/%d{yyyyMMdd,aux}/%d{yyyyMMddHHmm}.${server.num}.imp.log
+            <fileNamePattern>${logHome}/imp/%d{yyyyMMdd,aux}/%d{yyyyMMddHHmm}.${serverNum}.imp.log
             </fileNamePattern>
         </rollingPolicy>
         <encoder>
@@ -41,4 +38,9 @@
     <logger name="imp.log" level="INFO" additivity="false">
         <appender-ref ref="file.imp.log" />
     </logger>
+
+    <root level="${logSysLevel}">
+        <appender-ref ref="file.log.sys" />
+        <appender-ref ref="stdout" />
+    </root>
 </configuration>

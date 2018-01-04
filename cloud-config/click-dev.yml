@@ -1,0 +1,7 @@
+server:
+  port: 8002
+  num: 3
+log:
+  home: C:\Users\hasee\Desktop\logdata
+  sys:
+    level: info

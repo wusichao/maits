@@ -1,7 +1,0 @@
-cloud:
-    config:
-      profile: test
-      label: dev
-      uri: http://localhost:6001/
-
-

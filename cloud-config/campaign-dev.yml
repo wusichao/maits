@@ -3,10 +3,6 @@ from: campaign-dev master
 server:
   port: 8003
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:1111/eureka/
 spring:
   datasource:
     name: campaign
@@ -20,8 +16,6 @@ spring:
     port: 5672
     username: wusc
     password: 123456
-  application:
-    name: campaign
   redis:
     host: 47.94.8.65
     port: 6379

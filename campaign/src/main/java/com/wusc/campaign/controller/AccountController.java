@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.MediaType;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -24,12 +25,13 @@ import javax.validation.Valid;
  * create by wusc on 2017/12/20
  */
 @RestController
+@RefreshScope
 @RequestMapping(headers = "Accept=application/json;",produces = MediaType.APPLICATION_JSON_VALUE)
 public class AccountController {
     private static final Logger log = LoggerFactory.getLogger(AccountController.class);
     @Autowired
     private AccountService accountService;
-    @Value("$from")
+    @Value("${from}")
     private String from;
 
     @RequestMapping(value = "from")

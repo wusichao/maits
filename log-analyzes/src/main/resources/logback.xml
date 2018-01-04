@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-	<property resource="log.properties" />
+	<springProperty scope="context" name="logSysLevel" source="log.sys.level"/>
+	<springProperty scope="context" name="logHome" source="log.home"/>
+	<springProperty scope="context" name="serverNum" source="server.num"/>
 
 	<!-- System log -->
 	<appender name="file.log.sys" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<append>true</append>
-		<file>${LOG_HOME_ING}/${server.num}.analyzes.sys.log</file>
+		<file>${logHome}/ing/${serverNum}.analyzes.sys.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${LOG_HOME}/sys/%d{yyyyMMdd}.${server.num}.analyzes.sys.log</fileNamePattern>
+			<fileNamePattern>${logHome}/sys/%d{yyyyMMdd}.${serverNum}.analyzes.sys.log</fileNamePattern>
 		</rollingPolicy>
 		<encoder>
 			<pattern>[%d %-5level %t] %msg%n</pattern>
@@ -19,8 +21,7 @@
 		</encoder>
 	</appender>
 	
-	<root>
-		<level value="INFO" />
+	<root level="${logSysLevel}">
 		<appender-ref ref="file.log.sys"/>
 		<appender-ref ref="stdout" />
 	</root>

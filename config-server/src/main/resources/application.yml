@@ -1,8 +1,6 @@
 spring:
   application:
     name: config-server
-  profiles:
-    active: git
   cloud:
     config:
       server:
@@ -13,3 +11,10 @@ spring:
           password: wsc15171545112
 server:
   port: 6001
+security.user.name: wusichao
+security.user.password: 123456
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
