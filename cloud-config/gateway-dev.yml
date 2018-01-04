@@ -8,7 +8,7 @@ zuul:
   host:
     socket-timeout-millis: 20000
     connect-timeout-millis: 20000
-  prefix: /
+  prefix: /api
   routes:
     campaign:
       path: /campaign/**
