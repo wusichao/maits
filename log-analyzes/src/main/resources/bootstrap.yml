@@ -20,6 +20,4 @@ spring:
       discovery:
         enabled: true
         service-id: config-server
-security.user.name: wusichao
-security.user.password: 123456
 
