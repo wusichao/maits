@@ -15,9 +15,6 @@ zuul:
       serviceId: campaign
       stripPrefix: true
 
-security.user.name: wusichao
-security.user.password: 123456
-
 ribbon:
   ReadTimeout: 10000
   ConnectTimeout: 10000

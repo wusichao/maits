@@ -6,6 +6,3 @@ spring:
       port: 5672
       username: wusc
       password: 123456
-
-security.user.name: wusichao
-security.user.password: 123456
