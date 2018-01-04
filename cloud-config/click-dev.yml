@@ -1,2 +1,5 @@
 server:
   port: 8002
+
+security.user.name: wusichao
+security.user.password: 123456

@@ -7,3 +7,6 @@ spring:
     password: Wusc@2017
     url: jdbc:mysql://47.94.8.65:3306/campaign?useUnicode=true
     driver-class-name: com.mysql.jdbc.Driver
+
+security.user.name: wusichao
+security.user.password: 123456
