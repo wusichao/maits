@@ -1,4 +1,10 @@
-
+server:
+  port: 8001
+  num: 3
+log:
+  home: C:\Users\hasee\Desktop\logdata
+  sys:
+    level: info
 spring:
   rabbitmq:
       host: 127.0.0.1
