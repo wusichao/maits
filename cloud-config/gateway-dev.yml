@@ -28,3 +28,9 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 2000
+spring:
+  redis:
+    host: 47.94.8.65
+    port: 6379
+    password: 123456
+    timeout: 10000

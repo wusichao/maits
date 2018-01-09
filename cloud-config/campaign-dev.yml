@@ -70,3 +70,8 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: false
+token:
+  tokenTTL: 1000*60*60
+  refreshTTL: 1000*60*60*2
+  exists: 3
+
