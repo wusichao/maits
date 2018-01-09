@@ -27,7 +27,7 @@ hystrix:
           enabled: true
         isolation:
           thread:
-            timeoutInMilliseconds: 2000
+            timeoutInMilliseconds: 20000
 spring:
   redis:
     host: 47.94.8.65
