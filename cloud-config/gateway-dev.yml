@@ -34,3 +34,6 @@ spring:
     port: 6379
     password: 123456
     timeout: 10000
+gateway:
+  allow:
+   url: api/campaign/login
