@@ -1,6 +1,6 @@
 package com.wusc.redis;
 
-import com.wusc.auth.utils.ReturnResult;
+import com.wusc.vo.ReturnResult;
 import com.wusc.redis.dto.RedisDTO;
 import com.wusc.redis.service.RedisService;
 import org.junit.Test;

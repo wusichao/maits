@@ -2,17 +2,22 @@ package com.wusc.campaign.service;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
-import com.wusc.auth.utils.ResultUtil;
-import com.wusc.auth.utils.ReturnResult;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.wusc.campaign.pojo.AccountToken;
+import com.wusc.token.JwtManeger;
+import com.wusc.utils.ResultUtil;
+import com.wusc.vo.ReturnResult;
 import com.wusc.campaign.dao.AccountMapper;
 import com.wusc.campaign.model.Account;
 import com.wusc.campaign.mq.rabbitMQ.Sender;
 import com.wusc.campaign.utils.PageFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -30,6 +35,8 @@ public class AccountService {
     private AccountMapper accountMapper;
     @Autowired
     private Sender sender;
+    @Autowired
+    private TokenService tokenService;
 
     /**
      * 新增用户
@@ -89,7 +96,7 @@ public class AccountService {
     }
 
     @Cacheable(value ="account" ,keyGenerator ="wrapperKey" )
-    public ReturnResult select( EntityWrapper<Account> wrapper,Integer limit,Integer offset,String sort,String order){
+    public ReturnResult select(EntityWrapper<Account> wrapper, Integer limit, Integer offset, String sort, String order){
         Map<String,Object> mapData = new HashMap<String,Object>();
         Page<Account> page = new PageFactory<Account>().defaultPage();
         try{
@@ -102,4 +109,33 @@ public class AccountService {
         mapData.put("data",page.getRecords());
         return new ReturnResult(ResultUtil.SUCCESS_CODE,mapData);
     }
+
+    public ReturnResult login(String email, String password) {
+        Account account = new Account();
+        account.setEmail(email);
+        account.setPassword(password);
+        try{
+           account=accountMapper.selectOne(account);
+        }catch (Exception e){
+            log.error("login selectOne error",e);
+        }
+        if (account==null){
+            return ResultUtil.LOGIN_ERROR;
+        }else{
+            AccountToken accountToken = new AccountToken();
+            BeanUtils.copyProperties(account,accountToken);
+            return tokenService.login(accountToken);
+        }
+
+    }
+
+    public ReturnResult logout(String token) {
+
+        return tokenService.logout(token);
+    }
+
+    public ReturnResult refresh(String oldToken) {
+        return tokenService.refresh(oldToken);
+    }
 }
+

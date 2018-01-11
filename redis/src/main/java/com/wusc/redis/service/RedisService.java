@@ -1,7 +1,7 @@
 package com.wusc.redis.service;
 
-import com.wusc.auth.utils.ResultUtil;
-import com.wusc.auth.utils.ReturnResult;
+import com.wusc.utils.ResultUtil;
+import com.wusc.vo.ReturnResult;
 import com.wusc.redis.dto.RedisDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

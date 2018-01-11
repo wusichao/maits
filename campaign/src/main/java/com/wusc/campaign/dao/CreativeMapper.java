@@ -3,6 +3,8 @@ package com.wusc.campaign.dao;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.wusc.campaign.model.Creative;
 
+import java.util.List;
+
 /**
  * <p>
  *  Mapper 接口
@@ -13,4 +15,5 @@ import com.wusc.campaign.model.Creative;
  */
 public interface CreativeMapper extends BaseMapper<Creative> {
 
+    List<Creative> getCreateveByIds(String creativeIds);
 }

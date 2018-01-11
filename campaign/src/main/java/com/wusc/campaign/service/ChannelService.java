@@ -2,8 +2,8 @@ package com.wusc.campaign.service;
 
 import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.baomidou.mybatisplus.plugins.Page;
-import com.wusc.auth.utils.ResultUtil;
-import com.wusc.auth.utils.ReturnResult;
+import com.wusc.utils.ResultUtil;
+import com.wusc.vo.ReturnResult;
 import com.wusc.campaign.dao.ChannelMapper;
 import com.wusc.campaign.model.Channel;
 import com.wusc.campaign.utils.PageFactory;
@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -64,7 +65,7 @@ public class ChannelService {
     }
 
     @Cacheable(value ="channel" ,keyGenerator ="wrapperKey" )
-    public ReturnResult select(Wrapper<Channel> wrapper,Integer limit,Integer offset,String sort,String order){
+    public ReturnResult select(Wrapper<Channel> wrapper, Integer limit, Integer offset, String sort, String order){
         Map<String,Object> mapData = new HashMap<>();
         Page<Channel> page = new PageFactory<Channel>().defaultPage();
         try {
@@ -78,4 +79,8 @@ public class ChannelService {
         return new ReturnResult(ResultUtil.SUCCESS_CODE,mapData);
     }
 
+    public List<Channel> getChannelByIds(String channelIds) {
+
+        return channelMapper.getChannelByIds(channelIds);
+    }
 }

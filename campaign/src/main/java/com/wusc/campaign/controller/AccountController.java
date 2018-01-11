@@ -1,9 +1,10 @@
 package com.wusc.campaign.controller;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import com.wusc.auth.utils.ReturnResult;
+import com.wusc.token.annotation.SignLogin;
+import com.wusc.vo.ReturnResult;
 import com.wusc.campaign.model.Account;
-import com.wusc.campaign.dto.AccountDTO;
+import com.wusc.campaign.params.AccountParam;
 import com.wusc.campaign.service.AccountService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -39,30 +40,30 @@ public class AccountController {
         return from;
     }
 
-    @ApiOperation(value="用户注册", response=ReturnResult.class)
+    @ApiOperation(value="account register", response=ReturnResult.class)
     @ApiImplicitParams({
             @ApiImplicitParam(dataType="String", paramType="header", value="令牌", name="token", required=true),
         })
     @RequestMapping(value = "account",method = RequestMethod.POST)
-    public ReturnResult add(@Valid @RequestBody AccountDTO param, BindingResult result){
+    public ReturnResult add(@Valid @RequestBody AccountParam param, BindingResult result){
         Account account = new Account();
         BeanUtils.copyProperties(param,account);
         return accountService.add(account);
     }
 
-    @ApiOperation(value="用户更新", response=ReturnResult.class)
+    @ApiOperation(value="account update", response=ReturnResult.class)
     @ApiImplicitParams({
             @ApiImplicitParam(dataType="String", paramType="header", value="令牌", name="token", required=true),
     })
     @RequestMapping(value = "account/{id}",method=RequestMethod.PUT)
-    public ReturnResult update(@PathVariable(required = true) Long id , @Valid @RequestBody AccountDTO param, BindingResult result){
+    public ReturnResult update(@PathVariable(required = true) Long id , @Valid @RequestBody AccountParam param, BindingResult result){
         Account account = new Account();
         BeanUtils.copyProperties(param,account);
         account.setId(id);
         return accountService.update(account);
     }
 
-    @ApiOperation(value="删除用户", response=ReturnResult.class)
+    @ApiOperation(value="delete account", response=ReturnResult.class)
     @ApiImplicitParams({
             @ApiImplicitParam(dataType="String", paramType="header", value="令牌", name="token", required=true),
     })
@@ -71,7 +72,7 @@ public class AccountController {
         return accountService.delete(id);
     }
 
-    @ApiOperation(value="用户查询", response=ReturnResult.class)
+    @ApiOperation(value="query account", response=ReturnResult.class)
     @ApiImplicitParams({
             @ApiImplicitParam(dataType="Integer", paramType="query", value="每页多少", name="limit", required=true),
             @ApiImplicitParam(dataType="Integer", paramType="query", value="偏移量", name="offset", required=true),
@@ -80,7 +81,7 @@ public class AccountController {
             @ApiImplicitParam(dataType="String", paramType="header", value="令牌", name="token", required=true),
     })
     @RequestMapping(value = "account",method = RequestMethod.GET)
-    public ReturnResult select(Long id,String email,Short type,String companyName,String vertical,String webSite,String contact,String cellphone,Integer limit,Integer offset,String sort,String order){
+    public ReturnResult select(Long id, String email, Short type, String companyName, String vertical, String webSite, String contact, String cellphone, Integer limit, Integer offset, String sort, String order){
         EntityWrapper<Account> wrapper = new EntityWrapper();
         if(id!=null){
             wrapper.eq("id",id);
@@ -109,8 +110,40 @@ public class AccountController {
         return accountService.select(wrapper,limit,offset,sort,order);
     }
 
+    @ApiOperation(value="acocunt login", response=ReturnResult.class)
+    @ApiImplicitParams({
+            @ApiImplicitParam(dataType="String", paramType="query", value="email", name="email", required=true),
+            @ApiImplicitParam(dataType="String", paramType="query", value="password", name="password", required=true),
+    })
+
+        @RequestMapping(value = "login",method = RequestMethod.POST)
+        @SignLogin
+        public ReturnResult login(@RequestParam(required = true) String email,@RequestParam(required = true)String password){
+        return accountService.login(email,password);
+        }
+
+    @ApiOperation(value="acocunt logout", response=ReturnResult.class)
+    @ApiImplicitParams({
+            @ApiImplicitParam(dataType="String", paramType="header", value="token", name="token", required=true),
+    })
+
+    @RequestMapping(value = "logout",method = RequestMethod.POST)
+    public ReturnResult logout(@RequestHeader("token") String token){
+        return accountService.logout(token);
+    }
+
+    @ApiOperation(value="acocunt token refresh", response=ReturnResult.class)
+    @ApiImplicitParams({
+            @ApiImplicitParam(dataType="String", paramType="header", value="token", name="token", required=true),
+    })
+
+    @RequestMapping(value = "refresh",method = RequestMethod.POST)
+    public ReturnResult refresh(@RequestHeader("token") String oldToken){
+
+        return accountService.refresh(oldToken);
+    }
+
     //TODO validate email usable
 
     //TODO account info progress
-
 }

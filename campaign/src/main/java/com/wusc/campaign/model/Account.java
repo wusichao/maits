@@ -6,6 +6,8 @@ import com.baomidou.mybatisplus.enums.IdType;
 import java.beans.Transient;
 import java.util.Date;
 import com.baomidou.mybatisplus.annotations.TableId;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.Serializable;
 
 /**
@@ -16,13 +18,12 @@ import java.io.Serializable;
  * @author wusichao
  * @since 2017-12-22
  */
-public class Account implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+public class Account{
 
 	@TableId(value="id", type= IdType.AUTO)
 	private Long id;
 	private String email;
+	@JsonIgnore
 	private String password;
 	private Integer type;
 	private String companyName;
@@ -145,7 +146,7 @@ public class Account implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Account{" +
+		return "AccountPOJO{" +
 				"id=" + id +
 				", email='" + email + '\'' +
 				", password='" + password + '\'' +

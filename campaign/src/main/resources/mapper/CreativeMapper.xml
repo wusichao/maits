@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wusc.campaign.dao.CreativeMapper">
 
-    <!-- 开启二级缓存 -->
-
+    <select id="getCreateveByIds" resultType="com.wusc.campaign.model.Creative">
+        SELECT id,name FROM creative WHERE id IN ("#(0)")
+    </select>
 </mapper>

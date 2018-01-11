@@ -3,8 +3,8 @@ package com.wusc.campaign.service;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.baomidou.mybatisplus.plugins.Page;
-import com.wusc.auth.utils.ResultUtil;
-import com.wusc.auth.utils.ReturnResult;
+import com.wusc.utils.ResultUtil;
+import com.wusc.vo.ReturnResult;
 import com.wusc.campaign.dao.CreativeMapper;
 import com.wusc.campaign.model.Creative;
 import com.wusc.campaign.utils.PageFactory;
@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -63,7 +64,7 @@ public class CreativeService {
         return ResultUtil.SUCEESS_NONE_DATA;
     }
     @Cacheable(value ="creative" ,keyGenerator ="wrapperKey" )
-    public ReturnResult select(Wrapper wrapper,Integer limit,Integer offset,String sort,String order){
+    public ReturnResult select(Wrapper wrapper, Integer limit, Integer offset, String sort, String order){
         Map<String,Object> mapData = new HashMap<>();
         Page<Creative> page = new PageFactory<Creative>().defaultPage();
         try {
@@ -88,5 +89,10 @@ public class CreativeService {
             return ResultUtil.SYSTEM_ERROR;
         }
         return ResultUtil.SUCEESS_NONE_DATA;
+    }
+
+    public List<Creative> getCreateveByIds(String creativeIds) {
+
+        return creativeMapper.getCreateveByIds(creativeIds);
     }
 }

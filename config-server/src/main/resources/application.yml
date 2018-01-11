@@ -10,7 +10,13 @@ spring:
           username: wusichao
           password: wsc15171545112
 server:
-  port: 6001
+  port: 6666
+  num: 3
+log:
+  home: /usr/wusc/docker/data
+  sys:
+    level: info
+
 security.user.name: wusichao
 security.user.password: 123456
 
@@ -18,3 +24,4 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:1111/eureka/
+

@@ -3,6 +3,8 @@ package com.wusc.campaign.dao;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.wusc.campaign.model.Campaign;
 
+import java.util.Map;
+
 /**
  * <p>
  *  Mapper 接口

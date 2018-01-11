@@ -3,8 +3,8 @@ package com.wusc.campaign.controller;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.mapper.Wrapper;
-import com.wusc.auth.utils.ReturnResult;
-import com.wusc.campaign.dto.CreativeDTO;
+import com.wusc.vo.ReturnResult;
+import com.wusc.campaign.params.CreativeParam;
 import com.wusc.campaign.model.Creative;
 import com.wusc.campaign.service.CreativeService;
 import io.swagger.annotations.ApiImplicitParam;
@@ -32,7 +32,7 @@ public class CreativeController {
             @ApiImplicitParam(dataType="String", paramType="header", value="令牌", name="token", required=true),
     })
     @RequestMapping(value = "creative",method = RequestMethod.POST)
-    public ReturnResult add(@Valid @RequestBody CreativeDTO param){
+    public ReturnResult add(@Valid @RequestBody CreativeParam param){
         Creative creative = new Creative();
         BeanUtils.copyProperties(param,creative);
         return creativeService.add(creative);
@@ -51,7 +51,7 @@ public class CreativeController {
             @ApiImplicitParam(dataType="String", paramType="header", value="令牌", name="token", required=true),
     })
     @RequestMapping(value = "creative",method = RequestMethod.PUT)
-    public ReturnResult update(@PathVariable(required=true) Long id,@Valid @RequestBody CreativeDTO param){
+    public ReturnResult update(@PathVariable(required=true) Long id, @Valid @RequestBody CreativeParam param){
         Creative creative = new Creative();
         BeanUtils.copyProperties(param,creative);
         creative.setId(id);
@@ -67,7 +67,7 @@ public class CreativeController {
             @ApiImplicitParam(dataType="String", paramType="header", value="令牌", name="token", required=true),
     })
     @RequestMapping(value = "creative",method = RequestMethod.GET)
-    public ReturnResult select(Long id,String name,Integer limit,Integer offset,String sort,String order){
+    public ReturnResult select(Long id, String name, Integer limit, Integer offset, String sort, String order){
         Wrapper<Creative> wrapper = new EntityWrapper<>();
         if (id!=null){
             wrapper.eq("id",id);

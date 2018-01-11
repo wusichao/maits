@@ -3,8 +3,8 @@ package com.wusc.campaign.controller;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.mapper.Wrapper;
-import com.wusc.auth.utils.ReturnResult;
-import com.wusc.campaign.dto.CampaignDTO;
+import com.wusc.vo.ReturnResult;
+import com.wusc.campaign.params.CampaignParam;
 import com.wusc.campaign.model.Campaign;
 import com.wusc.campaign.service.CampaignService;
 import io.swagger.annotations.ApiImplicitParam;
@@ -32,7 +32,7 @@ public class CampaignController {
             @ApiImplicitParam(dataType="String", paramType="header", value="令牌", name="token", required=true),
     })
     @RequestMapping(value = "campaign",method = RequestMethod.POST)
-    public ReturnResult add(@Valid @RequestBody CampaignDTO param){
+    public ReturnResult add(@Valid @RequestBody CampaignParam param){
         Campaign campaign = new Campaign();
         BeanUtils.copyProperties(param,campaign);
         return campaignService.add(campaign);
@@ -42,7 +42,7 @@ public class CampaignController {
     @ApiImplicitParams({
             @ApiImplicitParam(dataType="String", paramType="header", value="令牌", name="token", required=true),
     })
-    @RequestMapping(value = "campaign",method = RequestMethod.DELETE)
+    @RequestMapping(value = "campaign/{id}",method = RequestMethod.DELETE)
     public ReturnResult delete(@PathVariable(required=true) Long id) {
         return campaignService.delete(id);
     }
@@ -52,8 +52,8 @@ public class CampaignController {
     @ApiImplicitParams({
             @ApiImplicitParam(dataType="String", paramType="header", value="令牌", name="token", required=true),
     })
-    @RequestMapping(value = "campaign",method = RequestMethod.PUT)
-    public ReturnResult update(@PathVariable(required=true) Long id, @Valid @RequestBody CampaignDTO param){
+    @RequestMapping(value = "campaign/{id}",method = RequestMethod.PUT)
+    public ReturnResult update(@PathVariable(required=true) Long id, @Valid @RequestBody CampaignParam param){
         Campaign campaign = new Campaign();
         BeanUtils.copyProperties(param,campaign);
         campaign.setId(id);
@@ -70,7 +70,7 @@ public class CampaignController {
             @ApiImplicitParam(dataType="String", paramType="header", value="令牌", name="token", required=true),
     })
     @RequestMapping(value = "campaign",method = RequestMethod.GET)
-    public ReturnResult select(Long id,String name,Integer limit,Integer offset,String sort,String order){
+    public ReturnResult select(Long id, String name, Integer limit, Integer offset, String sort, String order){
         Wrapper<Campaign> wrapper = new EntityWrapper<>();
         if (id!=null){
             wrapper.eq("id",id);
@@ -82,10 +82,14 @@ public class CampaignController {
 
 
     }
-    //TODO
-    public ReturnResult getMaitsCode(){
+    @ApiOperation(value="获取监测代码", response=ReturnResult.class)
+    @ApiImplicitParams({
+            @ApiImplicitParam(dataType="String", paramType="header", value="令牌", name="token", required=true),
+    })
+    @RequestMapping(value ="getMaitsCode/{id}")
+    public ReturnResult getMaitsImpCode(@PathVariable(required = true) Long id){
 
-        return null;
+        return campaignService.getMaitsCode(id);
     }
 }
 

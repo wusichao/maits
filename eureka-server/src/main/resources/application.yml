@@ -3,6 +3,11 @@ spring:
     name: eureka-server
 server:
   port: 1111
+  num: 3
+log:
+  home: /usr/wusc/docker/data
+  sys:
+    level: info
 eureka:
   instance:
     perferIpAddress: false

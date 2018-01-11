@@ -3,8 +3,8 @@ package com.wusc.campaign.controller;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.mapper.Wrapper;
-import com.wusc.auth.utils.ReturnResult;
-import com.wusc.campaign.dto.ChannelDTO;
+import com.wusc.vo.ReturnResult;
+import com.wusc.campaign.params.ChannelParam;
 import com.wusc.campaign.model.Channel;
 import com.wusc.campaign.service.ChannelService;
 import io.swagger.annotations.ApiImplicitParam;
@@ -32,7 +32,7 @@ public class ChannelController {
             @ApiImplicitParam(dataType="String", paramType="header", value="令牌", name="token", required=true),
     })
     @RequestMapping(value = "channel",method = RequestMethod.POST)
-    public ReturnResult add(@Valid @RequestBody ChannelDTO param){
+    public ReturnResult add(@Valid @RequestBody ChannelParam param){
         Channel channel = new Channel();
         BeanUtils.copyProperties(param,channel);
         return channelService.add(channel);
@@ -52,7 +52,7 @@ public class ChannelController {
             @ApiImplicitParam(dataType="String", paramType="header", value="令牌", name="token", required=true),
     })
     @RequestMapping(value = "channel",method = RequestMethod.PUT)
-    public ReturnResult update(@PathVariable(required=true) Long id,@Valid @RequestBody ChannelDTO param){
+    public ReturnResult update(@PathVariable(required=true) Long id, @Valid @RequestBody ChannelParam param){
         Channel channel = new Channel();
         BeanUtils.copyProperties(param,channel);
         channel.setId(id);
@@ -68,7 +68,7 @@ public class ChannelController {
             @ApiImplicitParam(dataType="String", paramType="header", value="令牌", name="token", required=true),
     })
     @RequestMapping(value = "channel",method = RequestMethod.GET)
-    public ReturnResult select(Long id,Long accountId,String name,Integer limit,Integer offset,String sort,String order){
+    public ReturnResult select(Long id, Long accountId, String name, Integer limit, Integer offset, String sort, String order){
         Wrapper<Channel> wrapper = new EntityWrapper<>();
         if (id!=null){
         wrapper.eq("id",id);

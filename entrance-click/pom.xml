@@ -37,7 +37,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.wusc</groupId>
-			<artifactId>entrance-base</artifactId>
+			<artifactId>common-entrance</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
@@ -67,8 +67,8 @@
 			<artifactId>spring-boot-starter-amqp</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-bus-amqp</artifactId>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
 		</dependency>
 	</dependencies>
 
