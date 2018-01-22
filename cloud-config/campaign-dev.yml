@@ -74,4 +74,7 @@ token:
   tokenTTL: 3600
   refreshTTL: 7200
   exists: 3
+order:
+  user:
+    ttl: 1800
 
