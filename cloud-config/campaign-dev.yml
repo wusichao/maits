@@ -35,7 +35,7 @@ ribbon:
   MaxAutoRetries: 1
 
 # Hystrix功能开关
-feign.hystrix.enabled: true
+feign.hystrix.enabled: false
 # 设置熔断超时时间
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 10000
 # 关闭熔断功能
