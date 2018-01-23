@@ -74,6 +74,6 @@ pay:
     appId: wxcc683d71f3dcfb2d
     mchId: 1358772102
     spbillCreateIp: 192.168.120.79
-    notifyUrl: http://wusc.wicp.io:27874
+    notifyUrl: http://wusc.wicp.io:27874/call_back_wx
     unifiedorderUrl: https://api.mch.weixin.qq.com/pay/unifiedorder
 
