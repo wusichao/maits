@@ -85,4 +85,5 @@ public class RedisCacheConfig extends CachingConfigurerSupport {
         jackson2JsonRedisSerializer.setObjectMapper(objectMapper);
         return jackson2JsonRedisSerializer;
     }
+
 }

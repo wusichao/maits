@@ -2,22 +2,19 @@ package com.wusc.campaign.service;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.wusc.campaign.pojo.AccountToken;
-import com.wusc.token.JwtManeger;
-import com.wusc.utils.ResultUtil;
-import com.wusc.vo.ReturnResult;
 import com.wusc.campaign.dao.AccountMapper;
 import com.wusc.campaign.model.Account;
 import com.wusc.campaign.mq.rabbitMQ.Sender;
+import com.wusc.campaign.pojo.AccountToken;
 import com.wusc.campaign.utils.PageFactory;
+import com.wusc.utils.ResultUtil;
+import com.wusc.vo.ReturnResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -37,6 +34,7 @@ public class AccountService {
     private Sender sender;
     @Autowired
     private TokenService tokenService;
+
 
     /**
      * 新增用户

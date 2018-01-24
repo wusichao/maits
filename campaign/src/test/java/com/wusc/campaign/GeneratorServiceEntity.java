@@ -15,18 +15,18 @@ import org.junit.Test;
 public class GeneratorServiceEntity {
     @Test
     public void generateCode(){
-        String packageName = "com.wusc.campaign.com.wusc.entrancebase.model";
-        generateByTables(packageName, "account", "campaign","creative","channel","media");
+        String packageName = "com.wusc.campaign";
+        generateByTables(packageName, "pay","user_order");
     }
 
     private void generateByTables(String packageName, String... tableNames){
         GlobalConfig config = new GlobalConfig();
-        String dbUrl = "jdbc:mysql://localhost:3306/campaign";
+        String dbUrl = "jdbc:mysql://47.94.8.65:3306/campaign";
         DataSourceConfig dataSourceConfig = new DataSourceConfig();
         dataSourceConfig.setDbType(DbType.MYSQL)
                 .setUrl(dbUrl)
                 .setUsername("wusc")
-                .setPassword("123456")
+                .setPassword("Wusc@2017")
                 .setDriverName("com.mysql.jdbc.Driver");
         StrategyConfig strategyConfig = new StrategyConfig();
         strategyConfig

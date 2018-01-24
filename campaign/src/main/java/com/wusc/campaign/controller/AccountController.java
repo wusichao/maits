@@ -1,11 +1,10 @@
 package com.wusc.campaign.controller;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import com.wusc.token.annotation.SignLogin;
-import com.wusc.vo.ReturnResult;
 import com.wusc.campaign.model.Account;
 import com.wusc.campaign.params.AccountParam;
 import com.wusc.campaign.service.AccountService;
+import com.wusc.vo.ReturnResult;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
@@ -117,7 +116,6 @@ public class AccountController {
     })
 
         @RequestMapping(value = "login",method = RequestMethod.POST)
-        @SignLogin
         public ReturnResult login(@RequestParam(required = true) String email,@RequestParam(required = true)String password){
         return accountService.login(email,password);
         }
@@ -137,7 +135,7 @@ public class AccountController {
             @ApiImplicitParam(dataType="String", paramType="header", value="token", name="token", required=true),
     })
 
-    @RequestMapping(value = "refresh",method = RequestMethod.POST)
+    @RequestMapping(value = "tokenRefresh",method = RequestMethod.POST)
     public ReturnResult refresh(@RequestHeader("token") String oldToken){
 
         return accountService.refresh(oldToken);

@@ -1,5 +1,6 @@
 package com.wusc.campaign.service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.wusc.campaign.pojo.AccountToken;
 import com.wusc.utils.ResultUtil;
 import com.wusc.vo.ReturnResult;
@@ -9,8 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.hash.ObjectHashMapper;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -30,6 +34,10 @@ public class TokenService {
     private long exists;
     @Autowired
     private RedisTemplate redisTemplate;
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
+    @Autowired
+    private ObjectMapper objectMapper;
 
     public ReturnResult login(AccountToken accountToken){
 
@@ -61,7 +69,12 @@ public class TokenService {
     }
 
     public ReturnResult refresh(String oldToken) {
-        AccountToken accountToken=(AccountToken)redisTemplate.opsForValue().get(oldToken);
+        AccountToken accountToken= null;
+        try {
+            accountToken = objectMapper.readValue(stringRedisTemplate.opsForValue().get(oldToken),AccountToken.class);
+        } catch (IOException e) {
+            log.error("refresh error",e);
+        }
         redisTemplate.delete(oldToken);
        return this.login(accountToken);
     }

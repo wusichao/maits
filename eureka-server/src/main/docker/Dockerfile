@@ -1,5 +1,6 @@
 FROM frolvlad/alpine-oraclejdk8:slim
 VOLUME /usr/wusc/docker/data
+EXPOSE 1111
 ADD eureka-1.0.0.jar app.jar
 RUN sh -c 'touch /app.jar'
 ENV JAVA_OPTS="-Xms64m -Xmx128m"
