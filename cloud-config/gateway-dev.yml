@@ -14,6 +14,10 @@ zuul:
       path: /campaign/**
       serviceId: campaign
       stripPrefix: true
+    pay:
+      path: /pay/**
+      serviceId: pay
+      stripPrefix: true
 
 ribbon:
   ReadTimeout: 10000
