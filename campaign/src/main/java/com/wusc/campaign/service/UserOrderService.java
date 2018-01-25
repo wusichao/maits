@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.UUID;
@@ -28,15 +29,31 @@ public class UserOrderService {
     private RedisTemplate redisTemplate;
     @Autowired
     private UserOrderMapper userOrderMapper;
+
+    @Transactional
     public ReturnResult add(long id) {
         String orderId= UUID.randomUUID().toString().replace("-","");
         UserOrder userOrder = new UserOrder(orderId,1L,new Date());
         try{
+            userOrderMapper.insert(userOrder);
             redisTemplate.opsForValue().set("order:user:"+orderId,userOrder,userOrderTTL, TimeUnit.SECONDS);
         }catch (Exception e){
             logger.error("add error",e);
             return ResultUtil.SYSTEM_ERROR;
         }
             return ResultUtil.SUCEESS_NONE_DATA;
+    }
+
+    public ReturnResult orderBack(String id) {
+        UserOrder userOrder = new UserOrder();
+        userOrder.setId(id);
+        userOrder.setStatus(1);
+        try{
+            userOrderMapper.updateById(userOrder);
+        }catch (Exception e){
+            logger.error("orderBack error",e);
+            return ResultUtil.SYSTEM_ERROR;
+        }
+        return ResultUtil.SUCEESS_NONE_DATA;
     }
 }

@@ -5,5 +5,5 @@ spring:
     name: campaign
     username: wusc
     password: Wusc@2017
-    url: jdbc:mysql://47.94.8.65:3306/campaign?useUnicode=true
+    url: jdbc:mysql://47.94.8.65:3306/report?useUnicode=true
     driver-class-name: com.mysql.jdbc.Driver

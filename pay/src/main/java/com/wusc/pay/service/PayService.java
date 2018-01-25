@@ -1,5 +1,7 @@
 package com.wusc.pay.service;
 
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.wxpay.sdk.WXPay;
 import com.wusc.pay.dao.PayMapper;
@@ -14,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -41,6 +44,8 @@ public class PayService {
     private String notifyUrl;
     @Autowired
     private PayMapper payMapper;
+    @Autowired
+    private OrderRemoteService orderRemoteService;
 
     public byte[] unifiedorder(String order){
         UserOrder userOrder = null;
@@ -70,13 +75,26 @@ public class PayService {
         } catch (Exception e) {
             logger.error("unifiedorder error",e);
         }
+        Pay pay =new Pay();
+        pay.setOrderId(userOrder.getId());
+        payMapper.insert(pay);
         return output.toByteArray();
     }
 
+    @Transactional
     public ReturnResult updateOrder(String out_trade_no, String transaction_id) {
-        Pay pay =new Pay(out_trade_no,transaction_id,1);
+        Pay pay =new Pay(transaction_id,1);
+        Wrapper<Pay> wrapper = new EntityWrapper<>();
+        if (out_trade_no!=null){
+            wrapper.eq("order_id",out_trade_no);
+        }
         try{
-            payMapper.insert(pay);
+            //TODO need distrubuted transactional
+            payMapper.update(pay,wrapper);
+            ReturnResult result=orderRemoteService.orderBack(out_trade_no);
+            if(result.getCode()!=200){
+            throw new Exception("orderRemoteServiceFail");
+            }
         }catch (Exception e){
             logger.error("updateOrder error",e);
             return ResultUtil.SYSTEM_ERROR;

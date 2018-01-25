@@ -19,7 +19,7 @@ public class UserOderController {
     @Autowired
     private UserOrderService userOderService;
 
-    @ApiOperation(value="account register", response=ReturnResult.class)
+    @ApiOperation(value="order add", response=ReturnResult.class)
     @ApiImplicitParams({
             @ApiImplicitParam(dataType="String", paramType="header", value="令牌", name="token", required=true),
     })
@@ -27,5 +27,15 @@ public class UserOderController {
     public ReturnResult order(@RequestParam(required =true) long id){
 
         return userOderService.add(id);
+    }
+
+    @ApiOperation(value="account callback", response=ReturnResult.class)
+    @ApiImplicitParams({
+            @ApiImplicitParam(dataType="String", paramType="header", value="令牌", name="token", required=true),
+    })
+    @RequestMapping(value = "order",method = RequestMethod.PUT)
+    public ReturnResult orderBack(@RequestParam(required =true) String id){
+
+        return userOderService.orderBack(id);
     }
 }

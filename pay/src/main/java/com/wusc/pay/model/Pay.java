@@ -87,10 +87,13 @@ public class Pay {
 			"}";
 	}
 
-	public Pay(String orderId, String payId, Integer status) {
-		this.orderId = orderId;
+	public Pay(String payId, Integer status) {
 		this.payId = payId;
 		this.status = status;
+	}
+
+	public Pay(String orderId) {
+		this.orderId = orderId;
 	}
 
 	public Pay() {

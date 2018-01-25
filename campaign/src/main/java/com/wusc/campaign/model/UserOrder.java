@@ -1,5 +1,8 @@
 package com.wusc.campaign.model;
 
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.enums.IdType;
+
 import java.util.Date;
 import java.io.Serializable;
 
@@ -13,6 +16,7 @@ import java.io.Serializable;
  */
 public class UserOrder{
 
+	@TableId(value="id", type= IdType.UUID)
 	private String id;
 	private Long price;
 	private Integer status;
