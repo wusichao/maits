@@ -40,4 +40,4 @@ spring:
     timeout: 10000
 gateway:
   allow:
-   url: /api/campaign/login
+   url: /api/campaign/login,/api/pay/call_back_wx
