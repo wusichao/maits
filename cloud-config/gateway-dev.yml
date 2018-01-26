@@ -20,7 +20,7 @@ zuul:
       stripPrefix: true
 
 ribbon:
-  ReadTimeout: 10000
+  ReadTimeout: 3000
   ConnectTimeout: 10000
 
 hystrix:
@@ -31,7 +31,7 @@ hystrix:
           enabled: true
         isolation:
           thread:
-            timeoutInMilliseconds: 20000
+            timeoutInMilliseconds: 10000
 spring:
   redis:
     host: 47.94.8.65
