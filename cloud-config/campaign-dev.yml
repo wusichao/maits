@@ -21,6 +21,10 @@ spring:
     port: 6379
     password: 123456
     timeout: 10000
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: false #关闭重试
 
 # 设置连接超时时间
 ribbon:
