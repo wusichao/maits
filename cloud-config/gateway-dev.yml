@@ -2,12 +2,6 @@ server:
   port: 80
 zuul:
   retryable: false #是否开启重试功能
-  max:
-    host:
-      connections: 5000
-  host:
-    socket-timeout-millis: 20000
-    connect-timeout-millis: 20000
   prefix: /api
   routes:
     campaign:
