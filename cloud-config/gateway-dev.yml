@@ -12,18 +12,18 @@ zuul:
       path: /pay/**
       serviceId: pay
       stripPrefix: true
+
+# 设置降级超时时间
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 3000
+# 开关降级功能
+hystrix.command.default.execution.timeout.enabled: true
 ribbon:
   ReadTimeout: 5000
   ConnectTimeout: 5000
   MaxAutoRetries: 4 #对当前服务的重试次数
   MaxAutoRetriesNextServer: 0 #切换相同Server的次数
 
-# Hystrix功能开关
-feign.hystrix.enabled: true
-# 设置熔断超时时间
-hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 3000
-# 关闭熔断功能
-hystrix.command.default.execution.timeout.enabled: true
+
 spring:
   redis:
     host: 47.94.8.65
