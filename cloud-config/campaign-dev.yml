@@ -35,11 +35,11 @@ ribbon:
   MaxAutoRetries: 1
 
 # Hystrix功能开关
-feign.hystrix.enabled: false
-# 设置熔断超时时间
-hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 10000
+feign.hystrix.enabled: true
 # 关闭熔断功能
 hystrix.command.default.execution.timeout.enabled: true
+# 设置熔断超时时间
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 10000
 
 #mybatis
 mybatis-plus:
