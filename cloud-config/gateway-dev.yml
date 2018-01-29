@@ -14,7 +14,7 @@ zuul:
       stripPrefix: true
 
 # 设置降级超时时间
-hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 3000
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 8000
 # 开关降级功能
 hystrix.command.default.execution.timeout.enabled: true
 ribbon:
