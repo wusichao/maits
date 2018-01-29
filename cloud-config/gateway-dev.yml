@@ -20,7 +20,7 @@ zuul:
       stripPrefix: true
 
 ribbon:
-  ReadTimeout: 10000
+  ReadTimeout: 5000
   ConnectTimeout: 5000
   MaxAutoRetries: 4 #对当前服务的重试次数
   MaxAutoRetriesNextServer: 0 #切换相同Server的次数
