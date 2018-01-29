@@ -12,7 +12,6 @@ zuul:
       path: /pay/**
       serviceId: pay
       stripPrefix: true
-
 ribbon:
   ReadTimeout: 5000
   ConnectTimeout: 5000
@@ -24,7 +23,7 @@ hystrix:
     default:
       execution:
         timeout:
-          enabled: true
+          enabled: false
         isolation:
           thread:
             timeoutInMilliseconds: 3000
