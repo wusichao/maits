@@ -40,9 +40,6 @@ public class AccountController {
     }
 
     @ApiOperation(value="account register", response=ReturnResult.class)
-    @ApiImplicitParams({
-            @ApiImplicitParam(dataType="String", paramType="header", value="令牌", name="token", required=true),
-        })
     @RequestMapping(value = "account",method = RequestMethod.POST)
     public ReturnResult add(@Valid @RequestBody AccountParam param, BindingResult result){
         Account account = new Account();

@@ -3,7 +3,7 @@ server:
 spring:
   datasource:
     name: campaign
-    username: wusc
-    password: Wusc@2017
-    url: jdbc:mysql://47.94.8.65:3306/report?useUnicode=true
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/report?serverTimezone=UTC
     driver-class-name: com.mysql.jdbc.Driver
