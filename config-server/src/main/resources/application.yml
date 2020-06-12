@@ -8,7 +8,7 @@ spring:
           uri: https://github.com/wusichao/maits.git
           searchPaths: /cloud-config
           username: wusichao
-          password: wsc15171545112
+          password: wusc@2019
 server:
   port: 6666
   num: 3
