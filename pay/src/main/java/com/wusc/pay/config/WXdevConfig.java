@@ -1,6 +1,6 @@
 package com.wusc.pay.config;
 
-import com.github.wxpay.sdk.WXPay;
+import com.objcoding.wxpay.sdk.WXPay;
 import com.wusc.pay.pojo.WXdev;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;

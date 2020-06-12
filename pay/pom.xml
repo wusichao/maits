@@ -80,9 +80,9 @@
 			<artifactId>spring-boot-starter-amqp</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.github.wxpay</groupId>
+			<groupId>com.objcoding</groupId>
 			<artifactId>WXPay-SDK-Java</artifactId>
-			<version>0.0.4</version>
+			<version>0.0.5</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.zxing</groupId>

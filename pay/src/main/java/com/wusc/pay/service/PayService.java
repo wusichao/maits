@@ -3,7 +3,7 @@ package com.wusc.pay.service;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.wxpay.sdk.WXPay;
+import com.objcoding.wxpay.sdk.WXPay;
 import com.wusc.pay.dao.PayMapper;
 import com.wusc.pay.model.Pay;
 import com.wusc.pay.pojo.UserOrder;

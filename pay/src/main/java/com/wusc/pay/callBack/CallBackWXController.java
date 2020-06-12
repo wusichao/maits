@@ -1,7 +1,7 @@
 package com.wusc.pay.callBack;
 
-import com.github.wxpay.sdk.WXPay;
-import com.github.wxpay.sdk.WXPayUtil;
+import com.objcoding.wxpay.sdk.WXPay;
+import com.objcoding.wxpay.sdk.WXPayUtil;
 import com.wusc.pay.service.PayService;
 import com.wusc.vo.ReturnResult;
 import org.slf4j.Logger;

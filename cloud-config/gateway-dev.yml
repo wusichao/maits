@@ -26,9 +26,9 @@ ribbon:
 
 spring:
   redis:
-    host: 47.94.8.65
+    host: localhost
     port: 6379
-    password: 123456
+    password:
     timeout: 10000
 gateway:
   allow:

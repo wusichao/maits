@@ -1,6 +1,6 @@
 package com.wusc.pay.pojo;
 
-import com.github.wxpay.sdk.WXPayConfig;
+import com.objcoding.wxpay.sdk.WXPayConfig;
 import org.springframework.util.StringUtils;
 
 import java.io.*;
