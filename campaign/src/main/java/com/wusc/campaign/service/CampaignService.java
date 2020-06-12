@@ -86,22 +86,18 @@ public class CampaignService {
         return new ReturnResult(ResultUtil.SUCCESS_CODE,mapData);
     }
 
-    @Cacheable(value = "maitsCode",key ="#id")
+    //@Cacheable(value = "maitsCode",key ="#id")
     public ReturnResult getMaitsCode(Long id) {
         Map<String,Object> mapData = new HashMap<>();
         Campaign c =null;
         List<Channel> channels =null;
         List<Creative> createves =null;
-        try{
              c=campaignMapper.selectById(id);
              if(c==null){
                 return new ReturnResult(ResultUtil.SUCCESS_CODE,"invalid campaign");
              }
             channels=channelService.getChannelByIds(c.getChannelIds());
             createves=creativeService.getCreateveByIds(c.getCreativeIds());
-        }catch (Exception e){
-            log.error("getMaitsCode error");
-        }
         StringBuffer clickStrId=new StringBuffer("c?");
         StringBuffer ImpStrId=new StringBuffer("i?");
         StringBuffer strName=new StringBuffer();

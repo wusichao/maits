@@ -3,7 +3,7 @@
 <mapper namespace="com.wusc.campaign.dao.ChannelMapper">
 
     <select id="getChannelByIds" resultType="com.wusc.campaign.model.Channel">
-    SELECT id,name FROM channel WHERE id IN ("#{0}")
+    SELECT id,name FROM channel WHERE id IN (#{channelIds})
 
     </select>
 </mapper>

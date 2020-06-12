@@ -1,7 +1,7 @@
 server:
   num: 3
 log:
-  home: C:\Users\hasee\Desktop\logdata
+  home: C:\Users\10334\Desktop\logdata
   sys:
     level: info
 spring:

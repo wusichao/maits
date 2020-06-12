@@ -3,6 +3,6 @@
 <mapper namespace="com.wusc.campaign.dao.CreativeMapper">
 
     <select id="getCreateveByIds" resultType="com.wusc.campaign.model.Creative">
-        SELECT id,name FROM creative WHERE id IN ("#(0)")
+        SELECT id,name FROM creative WHERE id IN (#{0})
     </select>
 </mapper>
